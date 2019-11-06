@@ -1,0 +1,3 @@
+* the idea is to generate the index.html as well based on the contents
+of directory "raw". Each sub-directory in the raw directory is a seperate
+post with all required files that was proposed previousluy.
