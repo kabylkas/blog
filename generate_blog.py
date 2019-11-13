@@ -27,6 +27,22 @@ os.system("mkdir posts")
 
 names = os.listdir("./raw")
 
+# sort posts by date
+dates = []
+for name in names:
+  with open("./raw/{0}/{0}.meta".format(name)) as infile:
+    for line in infile:
+      date = line.strip()
+      dates.append(date)
+
+print(dates)
+print(names)
+dns = zip(dates, names)
+dns.sort(reverse=True)
+dates = [dn[0] for dn in dns]
+names = [dn[1] for dn in dns]
+print(dates)
+print(names)
 for name in names:
   os.system("python add-post-page.py {0} {0}".format(name))
 
