@@ -33,7 +33,8 @@ for name in names:
   with open("./raw/{0}/{0}.meta".format(name)) as infile:
     for line in infile:
       date = line.strip()
-      dates.append(date)
+      date = date.split("/")
+      dates.append(date[2]+date[0]+date[1])
 
 print(dates)
 print(names)
